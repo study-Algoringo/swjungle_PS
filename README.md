@@ -24,11 +24,11 @@ git commit -m "[BOJ] Hello World / 브론즈5 / 12345" -m "https://www.acmicpc.n
   - [CFS] - 코드포스
   - [SEA] - 삼성SW Expert Academy
   - [ETC] - 그외
-## ✅ PR 규칙
+## PR 규칙✅
 - PR 제목: [문제 출처(플랫폼)] 문제이름 / 난이도 / 문제번호
 - [PGS] 카펫 / Level2 / 42842 / 박정영
 
-## ✅(option)코드리뷰 규칙(일요일 한정)
+## 코드리뷰 규칙(일요일 한정)✅
 - PR에서 코드리뷰를 한다.
 - 전체 코드 흐름을 파악한 뒤, 이 분이 어떻게 풀었을까 이해를 한 후
 - 의견제시
@@ -37,3 +37,4 @@ git commit -m "[BOJ] Hello World / 브론즈5 / 12345" -m "https://www.acmicpc.n
   - 왜 이렇게 풀었는지 궁금한 부분
   - 또 다른 풀이 방식 제시
 - 코드의 일부분에다 코드리뷰를 해도 되고 전체 코드 밑 or PR 하나 밑에다 코멘트 작성으로 리뷰를 해도 됩니다.
+리뷰 후 코드 수정 후 본인이 merge
