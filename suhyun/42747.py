@@ -1,11 +1,12 @@
 def solution(citations):
     answer = 0
-    cnt = 0
 
-    citations.sort()
+    citations.sort(reverse=True)
 
-    answer = len(citations)//2
+    for i in range(len(citations)):
+        if citations[i] < i+1:
+            answer=i
+            break
+        
 
     return answer
-
-print(solution([3, 0, 6, 1, 5]))
