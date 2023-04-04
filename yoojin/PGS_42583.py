@@ -26,4 +26,3 @@ def solution(bridge_length, weight, truck_weights):
         answer = queue[-1][1] + bridge_length
     
     return answer
-print(solution(5, 5, [2, 2, 2, 2, 1, 1, 1, 1, 1]))
