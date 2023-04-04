@@ -14,7 +14,6 @@ def solution(bridge_length, weight, truck_weights):
         
     return answer
 
-
 '''
 # 시간초과 코드
 # deque를 사용할 경우 시간 초과 발생
