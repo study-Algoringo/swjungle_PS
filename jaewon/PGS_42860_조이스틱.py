@@ -6,6 +6,7 @@ def solution(name):
     # 알파벳 변경 최솟값에 더하면 해당 알파벳을 변경하기 위한 총 이동횟수가 나오게 된다. 그중 최솟값을 구해야 하므로
     # min()함수를 사용하여 카운트를 해준다.
     min_move = len(name) - 1
+    print(min_move)
     for i, char in enumerate(name):
     	# 해당 알파벳 변경 최솟값 추가
         answer += min(ord(char) - ord('A'), ord('Z') - ord(char) + 1)
@@ -27,6 +28,7 @@ def solution(name):
         # >>>   >>   
         # JEEAAAZE
         # 위 3가지 방식을 비교하여 최솟값으로 갱신을 해준다.
+        print(f"기존 : {min_move}, 왼쪽 : {(2 * i) + (len(name) - next)}, 오른쪽 : {i + (2 * (len(name) -next))}")
         min_move = min([min_move, (2 * i) + (len(name) - next), i + (2 * (len(name) -next))])
     # 알파벳 변경(상하이동) 횟수에 좌우이동 횟수 추가
     answer += min_move
@@ -34,6 +36,7 @@ def solution(name):
 
 solution("JEEAAAZE")
 # solution("JAAASDAAE")
+
 
 # 참고사이트
 # https://velog.io/@jqdjhy/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1-Greedy#%EC%B6%94%EA%B0%80-%EC%84%A4%EB%AA%85
