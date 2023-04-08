@@ -16,7 +16,7 @@ def solution(numbers, target):
                 if b == target:
                     answer+=1
         num+=1
-        
+##??
     return answer
 arr = [1, 1, 1, 1, 1]
 print(solution(arr,3))
