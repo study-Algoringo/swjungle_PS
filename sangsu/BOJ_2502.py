@@ -1,3 +1,4 @@
+//풀이 성공//
 import sys
 input = sys.stdin.readline
 
