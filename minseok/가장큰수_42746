@@ -1,6 +1,6 @@
 def solution(numbers):
     answer = ''
-    numbers.sort()
+
     # numbers = sorted(numbers, reverse=True, key=lambda x : str(x*1000)[:4])
     numbers = sorted(numbers, reverse=True, key=lambda x : (str(x)*4)[:4])
     for i in numbers:
