@@ -24,6 +24,6 @@ def solution(priorities, location):
     #     temp = q.popleft()
     #     if temp != max(q):
     #         q.append(temp)
-    # answer = len(priorities) - len(q) + 1
+    # answer = len(priorities) - len(q) + 1 
 
 print(solution([1, 1, 9, 1, 1, 1], 0))
