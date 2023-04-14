@@ -4,24 +4,26 @@
 from collections import deque
 def solution(priorities, location):
     answer = 0
-    temp = deque()
-    for i in range(len(priorities)):
-        temp.append([i,priorities[i]])
+    # 프린터 목록과 우선순위를 함께 넣는다.
+    temp = deque((i,data) for i,data in enumerate(priorities))
 
-    # 뒤에꺼 다 봤는데 우선 순위가 더 높은게 있다면 다시 넣는다.
     # 우선 순위 높은게 없다면 뺀다.
     while temp:
         I,J = temp.popleft()
+        # flag = 큰게 있는지 확인
         flag = 1
+
+        # 목록을 확인 후 우선 순위가 높은게 있다면 다시 append
         for prioritie in temp:
             if J < prioritie[1]:
                 temp.append([I,J])
                 flag=0
                 break
-
+        # 높은게 없다면 +1
         if flag:
             answer+=1
-            
+
+        # 찾는 출력물과 동일하면서 temp안에 가장 우선순위가 높다면 정답 
         if I == location and flag:
             return answer
 
