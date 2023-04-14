@@ -1,0 +1,25 @@
+from collections import deque
+
+def solution(priorities, location):
+    answer = 0
+    q = deque()  # 우선순위 큐를 구현하기 위해 deque 사용
+    
+    # 큐에 우선순위와 인덱스를 함께 저장
+    for n, p in enumerate(priorities):
+        q.append((p, n))
+
+    while q:
+        # 현재 큐에서 가장 높은 우선순위를 가진 작업 찾기
+        maxp = max(q, key=lambda x: x[0])
+        
+        if maxp[1] != location:  # 출력하려는 작업이 아니라면
+            # 큐를 회전시켜서 가장 높은 우선순위를 가진 작업을 맨 앞으로 가져옴
+            while q[0][0] != maxp[0]:
+                q.rotate(-1)
+            q.popleft()  # 가장 높은 우선순위를 가진 작업을 큐에서 제거
+            answer += 1  
+        else:  # 출력하려는 작업이면
+            answer += 1  
+            break 
+
+    return answer
