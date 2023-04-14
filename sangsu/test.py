@@ -1,2 +1,3 @@
-num = [(1,4), (2,4), (1,2)]
-print(max(num))
+num = [1,2,3,4,5,6]
+num.remove(4)
+print(num)
