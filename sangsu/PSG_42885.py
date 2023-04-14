@@ -21,20 +21,11 @@ def solution(people, limit):
     n = len(people)
     start = 0
     end = n-1
-    while True:
-        if people[start] + people[end] == limit:
-            answer += 1
+    while start <= end:
+        if people[start] + people[end] <= limit:
             start += 1
-            end -= 1
-            
-        elif people[start] + people[end] < limit:
-            answer += 1
-            
         
+        end -= 1
+        answer += 1
         
-            
-    
-    
-    
-    
     return answer

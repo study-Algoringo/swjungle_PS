@@ -2,12 +2,8 @@ def solution(priorities, location):
     answer = 0
     new_priorities = []
     for i in range(len(priorities)):
-        k = priorities.pop(0)
-        new_priorities.append((k, i))
-    
+        new_priorities.append([priorities[i], i])
    
-        
-     
     while new_priorities:
                 priority = new_priorities.pop(0)
                 a,b = priority[0], priority[1]
