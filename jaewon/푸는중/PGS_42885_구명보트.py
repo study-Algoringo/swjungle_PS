@@ -15,8 +15,7 @@ def solution(people, limit):
     answer = boat
     return answer
 
-# solution([70, 50, 80, 50], 100)
-solution([40, 40, 40, 40], 240)
+solution([70, 50, 80, 50], 100)
 
 
 
