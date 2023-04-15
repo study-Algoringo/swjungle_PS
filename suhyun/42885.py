@@ -15,7 +15,7 @@
 
 #     return answer
 
-# 냅색은 이분법으로도 풀 수 있다.
+# 이분법으로도 풀 수 있다.
 from collections import deque
 def solution(people, limit):
     answer = 0
