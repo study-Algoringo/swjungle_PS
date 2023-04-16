@@ -2,7 +2,7 @@ def solution(priorities, location):
     answer = 0
     new_priorities = []
     for i in range(len(priorities)):
-    new_priorities.append([priorities[i], i])
+        new_priorities.append([priorities[i], i])
    
     while new_priorities:
                 priority = new_priorities.pop(0)
