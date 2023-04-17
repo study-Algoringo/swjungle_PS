@@ -1,14 +1,17 @@
+from collections import deque
 def solution(prices):
     answer = []
+    prices = deque(prices)
     while prices:
-        x = prices.pop(0)
         cnt = 0
+        x = prices.popleft()
 
         for price in prices:
-            if x <= price:
-                cnt += 1
-
+            cnt += 1
+            if x > price:
+                break
         answer.append(cnt)
+        
     return answer
 
-solution([10, 20, 30, 20, 30])
+solution([3, 1])
