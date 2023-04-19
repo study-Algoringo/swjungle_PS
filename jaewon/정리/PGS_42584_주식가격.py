@@ -2,6 +2,7 @@ from collections import deque
 def solution(prices):
     answer = []
     prices = deque(prices)
+    
     while prices:
         cnt = 0
         x = prices.popleft()
@@ -11,7 +12,7 @@ def solution(prices):
             if x > price:
                 break
         answer.append(cnt)
-        
+
     return answer
 
 solution([3, 1])
