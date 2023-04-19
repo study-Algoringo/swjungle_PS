@@ -1,7 +1,5 @@
 def solution(clothes):
-
     dic = {}
-    clothes.sort()
     cnt = []
     num = 1
     while clothes:
