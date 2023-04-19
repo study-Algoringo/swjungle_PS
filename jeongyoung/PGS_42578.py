@@ -10,3 +10,5 @@ def solution(clothes):
         else:
             clothe_table[key] = [value]
     for key in clothe_table.values():
+
+
