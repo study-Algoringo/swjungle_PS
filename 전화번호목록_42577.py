@@ -10,7 +10,6 @@ def solution(phone_book):
             return False
         
     return answer
-
 '''
 # 해시
 # 딕셔너리 사용
