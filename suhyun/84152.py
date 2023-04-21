@@ -15,14 +15,12 @@ def solution(word):
         for i in range(5):
             temp = x+moeum[i]
             que.append(temp)
-
+    print(result)
     result.sort()     
     for data in result:
         answer+=1
         if data == word:
             break
     return answer
-
-
 
 print(solution("EIO"))
