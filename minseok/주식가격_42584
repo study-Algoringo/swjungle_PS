@@ -1,0 +1,11 @@
+def solution(prices): 
+    answer = [] 
+    for i in range(len(prices)): 
+        cnt = 0 
+        for j in range(i, len(prices)-1): # 가격이 떨어질때까지 탐색
+            if prices[i] > prices[j]:     # 가격이 떨어지면 break
+                break 
+            else: 
+                cnt += 1                  # 가격이 떨어지지 않으면 cnt+1
+        answer.append(cnt) 
+    return answer
