@@ -23,4 +23,6 @@ def solution(word):
             break
     return answer
 
+
+
 print(solution("EIO"))
