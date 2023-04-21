@@ -24,3 +24,5 @@ def solution(word):
     return answer
 
 print(solution("EIO"))
+
+
