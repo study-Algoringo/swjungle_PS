@@ -8,7 +8,7 @@ def solution(name):
     min_move = len(name) - 1
     print(min_move)
     for i, char in enumerate(name):
-    	# 해당 알파벳 변경 최솟값 추가
+    	# 해당 알파벳 변경 최솟값 추가 (z부터 변경하는게 맞는지 a부터 변경하는게 맞는지 산출)
         answer += min(ord(char) - ord('A'), ord('Z') - ord(char) + 1)
         # 해당 알파벳 다음부터 연속된 A 문자열 찾기
         # 결국 next는 연속된 A의 끝부분 인덱스를 나타낸다.
@@ -34,8 +34,8 @@ def solution(name):
     answer += min_move
     return answer
 
-solution("JEEAAAZE")
-# solution("JAAASDAAE")
+# solution("JEEAAAZE")
+solution("JAAASDAAE")
 
 
 # 참고사이트
