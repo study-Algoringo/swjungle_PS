@@ -12,5 +12,3 @@ def solution(word):
     answer = dictionary.index(word)
     # 경우의 수 배열에서 주어진 word의 index 찾기
     return answer + 1
-
-print(solution("AAAE"))
