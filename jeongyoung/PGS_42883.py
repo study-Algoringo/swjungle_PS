@@ -5,11 +5,16 @@ def solution(number, k):
     while k > 0:
         start = n[i]
         end = n[i+1]
-        if (start < end):
-            n.remove(start)
-            k -= 1
+        if start != end:
+            if (start < end):
+                n.remove(start)
+                k -= 1
+            else:
+                n.remove(end)
+                k -= 1
         else:
-            n.remove(end)
-            k -= 1
+            i += 1
 
     return ''.join(n)
+
+# 마지막 테스트 케이스 4177252841 결과값: 772841 기댓값: 775841
