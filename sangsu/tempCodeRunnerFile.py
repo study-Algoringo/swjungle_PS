@@ -1,11 +1,10 @@
 import sys
 input = sys.stdin.readline
 n = int(input())
-
 jubdu = list([] for _ in range(n))
 word_list = []
 for _ in range(n):
-    word_list.append((input().strip()))
+    word_list.append(input())
 word_list.sort()
 
 for i in range(n):
@@ -17,14 +16,14 @@ for i in range(n):
         else:
             break
         
-real_list = []  
+real_list = []
 
-for idx in range(len(word_list)-1, -1, -1):
+for idx in range(0, len(word_list), -1):
     if not word_list[idx]:
         real_list.append(idx)
         
     else:
-        for iz in jubdu[idx]:
+        for iz in word_list[idx]:
             if iz in real_list:
                 break
         else:
@@ -33,6 +32,4 @@ for idx in range(len(word_list)-1, -1, -1):
 print(len(real_list))
                 
                 
-
-    
     
