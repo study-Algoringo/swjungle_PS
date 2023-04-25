@@ -1,3 +1,3 @@
-num_list = [1,2,3,4]
-a = 5
-num_list.appen
+a = 'dfgdg'
+print(len)
+print(a[:2])
