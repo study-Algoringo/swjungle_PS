@@ -25,7 +25,3 @@ for i in range(3, n):
         e, dp1, dp2 = dp1, dp2, 1e9
     _min = min(_min, e)
 print(_min)
-
-# dp[1] = 0; dp[2] = arr[1][0]; dp[3] = min(dp[1] + arr[2][0], arr[1][1])
-
-# dp[n] = min(arr[dp[n-1]] + dp[n-1], arr[dp[n-2]] + dp[n-2])
