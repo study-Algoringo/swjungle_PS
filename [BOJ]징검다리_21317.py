@@ -55,3 +55,4 @@ for i in range(3, N):
 
 print(_min)
 
+
