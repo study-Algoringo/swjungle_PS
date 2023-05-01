@@ -27,9 +27,9 @@ for i in range(6):
 if east == 2 and south == 2:
     order = (1,3)
 elif west == 2 and south == 2:
-    order = (2,3)
+    order = (3,2)
 elif east == 2 and north == 2:
-    order = (1,4)
+    order = (4,1)
 elif west == 2 and north == 2:
     order = (2,4)
 
