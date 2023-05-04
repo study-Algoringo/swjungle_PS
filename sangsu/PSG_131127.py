@@ -1,21 +1,19 @@
 def solution(want, number, discount):
     answer = 0
-    cnt = 0
+    
     n = len(want)
-    for item in discount:
-        cnt+= 1
-        if item in want:
-            i = want.index(item)
-            number[i] = number[i] -1    
+    goal = [0] *n
+    for i in range(len(discount)):
+        if discount[i] in want:
+            number[want.index(discount[i])] -= 1
             
-        if cnt > 10:
-            if discount[discount.index(item)-10] in want:
-                number[want.index(discount[discount.index(item)-10])] = number[want.index(discount[discount.index(item)-10])] + 1
+        if i>9 and discount[i-10] in want:
+            
+            number[want.index(discount[i-10])] += 1
+            
+        if number == goal:
+            answer += 1
         
-        for num in number:
-            if num != 0:
-                break   
-        else: answer += 1
         
     return answer
 
