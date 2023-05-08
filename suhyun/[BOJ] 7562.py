@@ -25,4 +25,3 @@ for _ in range(N):
                 visited[nx][ny] = True
                 que.append([nx,ny,c+1])
     print(answer)
-        
