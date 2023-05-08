@@ -14,6 +14,7 @@ seok.sort()
 jong.sort()
 
 
+# 이분 탐색
 def search(arr, target, start, end):
     while start <= end:
         mid = (start + end) // 2
