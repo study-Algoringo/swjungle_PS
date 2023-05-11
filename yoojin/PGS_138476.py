@@ -11,5 +11,4 @@ def solution(k, tangerine):
         k = k - mx
         count[count.index(mx)] = 0
         answer += 1
-
     return answer
