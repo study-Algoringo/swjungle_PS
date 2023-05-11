@@ -1,7 +1,6 @@
 # 담으려는 수 k
 def solution(k, tangerine):
     answer = []
-    tangerine.sort()
     # 크기 중복 귤 구하기
     box = {}
     for i in tangerine:
@@ -17,7 +16,7 @@ def solution(k, tangerine):
 
     # count
     cnt = 0
-    while k >= 0:
+    while k > 0:
         k -= answer.pop(0)
         cnt += 1
     return cnt
@@ -27,6 +26,5 @@ def solution(k, tangerine):
 # 1, [2, 2], [3, 3], 4, [5, 5]
 # 4개 뽑음 -> 1, 4, 2, 2
 
-# 2차시도 - 런타임 에러
 
 # solution(4, [1, 3, 2, 5, 4, 5, 2, 3])
