@@ -28,3 +28,5 @@ while True:
                 visited[x][y] = 1
                 hq.heappush(heap, (cost + cave[x][y], x, y))
     cnt += 1
+    
+    
