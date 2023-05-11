@@ -9,22 +9,24 @@ def solution(k, tangerine):
             box[i] += 1
         else:
             box[i] = 1
-            
+
     # 재정렬
-    for k in box.keys():
-        answer.append(box[k])
-    answer = sorted(answer)
-    
-   # count 
+    for j in box.keys():
+        answer.append(box[j])
+    answer = sorted(answer, reverse= True)
+
+    # count
     cnt = 0
-    while k > 0:
-        k -= answer.pop()
+    while k >= 0:
+        k -= answer.pop(0)
         cnt += 1
     return cnt
 
 
 # 1, 3, 2, 5, 4, 5, 2, 3
 # 1, [2, 2], [3, 3], 4, [5, 5]
-# 1, 4, [2, 2], [3, 3], [5, 5]
 # 4개 뽑음 -> 1, 4, 2, 2
-# 테스트 2 기댓값 2 결괏값 3 fail
+
+# 2차시도 - 런타임 에러
+
+# solution(4, [1, 3, 2, 5, 4, 5, 2, 3])
