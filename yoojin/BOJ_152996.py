@@ -9,7 +9,6 @@ def solution(weights):
 
     for i in dict:
         if (i * 3) % 2 == 0 and int(i * 3 / 2) in dict:
-
             answer += int(dict[i] * dict[int(i * 3 / 2)])
         if (i * 4) % 3 == 0 and int(i * 4 / 3) in dict:
             answer += int(dict[i] * dict[int(i * 4 / 3)])
