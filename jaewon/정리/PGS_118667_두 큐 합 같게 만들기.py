@@ -15,7 +15,7 @@ def solution(queue1, queue2):
     que_sum_two = sum(queue2)
     
     while True:
-        if cnt > len(queue1) + len(queue2):
+        if cnt > (len(queue1) + len(queue2)) * 2 or len(queue1) == 0 or len(queue2) == 0:
             return -1
 
         if que_sum_one < que_sum_two:
