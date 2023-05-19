@@ -17,8 +17,7 @@ elif n == 2:
 elif n == 3:
     print(min(rock[0][0]+rock[1][0], rock[0][1]))
     exit(0)
-elif n == 4:    
-    print(min(k, rock[0][0]+rock[1][0]+rock[2][0], rock[0][1]+rock[2][0], rock[0][0]+rock[1][1]))
+
     
 else:
     dp[0][0],dp[0][1] = 0,0
