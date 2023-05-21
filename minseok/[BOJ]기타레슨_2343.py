@@ -1,3 +1,5 @@
+'''
+# 시간초과
 import sys
 input = sys.stdin.readline
 
@@ -49,3 +51,35 @@ while True:
     if bp == 2:
         print(old_max)
         break
+'''
+
+import sys
+input = sys.stdin.readline
+
+n, m = map(int, input().split())
+
+time = list(map(int, input().split()))
+
+left = max(time)  
+right = sum(time)  
+
+while left <= right:
+    mid = (left + right) // 2
+
+    cnt = 1
+    curr_sum = 0
+    max_sum = 0
+
+    for t in time:
+        curr_sum += t
+        if curr_sum > mid:
+            cnt += 1
+            curr_sum = t
+        max_sum = max(max_sum, curr_sum)
+
+    if cnt > m:
+        left = mid + 1
+    else:
+        right = mid - 1
+
+print(left)
