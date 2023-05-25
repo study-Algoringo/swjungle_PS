@@ -28,13 +28,15 @@ for j in range(n):
        
    else:
        if j == n-1:
-           
            size += h +(x-s)*y
            h = y
            for i in range(n-2, -1, -1):
                if gidung[i][0] != s:
-                   size += (gidung[i][0]-s) *(gidung[i][1]-h)
-                   h = gidung[i][1]
+                   if gidung[i][1] > h:
+                        size += (gidung[i][0]-s) *(gidung[i][1]-h)
+                        h = gidung[i][1]
+                   else:
+                       continue
                else:
                    break
            
