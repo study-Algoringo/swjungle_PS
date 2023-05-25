@@ -1,42 +1,37 @@
 import sys
+
 N = int(sys.stdin.readline())
-block = []
+blocks = []
 
 # 입력 및 정렬 진행
 for _ in range(N):
-    block.append(list(map(int,list(sys.stdin.readline().split()))))
-block.sort()
+    blocks.append(list(map(int, sys.stdin.readline().split())))
+blocks.sort()
 
-# 가장 긴 그래프 값 구하기
-max_idx = 0
-max_len = 0
+# 가장 높은 기둥의 인덱스 구하기
+max_height_idx = 0
+max_height = 0
 for i in range(N):
-    if max_len < block[i][1]:
-        max_len = block[i][1]
-        max_idx = i
+    if max_height < blocks[i][1]:
+        max_height = blocks[i][1]
+        max_height_idx = i
 
-# 쭉 내려가는 경우
-# 쭉 올라가는 경우
-# 들쑥 날쑥 한 경우
-L_stack = [block[max_idx]]
-R_stack = [block[max_idx]]
-for i in range(max_idx+1,N):
-    if R_stack[-1][1] < block[i][1]:
-        R_stack.pop()
-    R_stack.append(block[i])
+# 왼쪽에서부터 가장 높은 기둥까지의 면적 구하기
+total_area = 0
+left_height = 0
+for i in range(max_height_idx):
+    if blocks[i][1] > left_height:
+        left_height = blocks[i][1]
+    total_area += left_height * (blocks[i + 1][0] - blocks[i][0])
 
-for i in range(max_idx-1,-1,-1):
-    if L_stack[-1][1] < block[i][1]:
-        L_stack.pop()
-    L_stack.append(block[i])
+# 오른쪽에서부터 가장 높은 기둥까지의 면적 구하기
+right_height = 0
+for i in range(N - 1, max_height_idx, -1):
+    if blocks[i][1] > right_height:
+        right_height = blocks[i][1]
+    total_area += right_height * (blocks[i][0] - blocks[i - 1][0])
 
-L_stack.sort()
-R_stack.sort()
-stack = L_stack[:-1] + R_stack
+# 가장 높은 기둥의 면적 더하기
+total_area += max_height
 
-result = 0
-for i in range(1,len(stack)):
-    x = abs(stack[i][0] - stack[i-1][0])
-    y = stack[i-1][1]
-    # result += (abs(stack[i][0] - stack[i-1][0]) * stack[i-1][1])
-print(result)
+print(total_area)
