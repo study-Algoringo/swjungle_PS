@@ -1,3 +1,9 @@
+# 모듈 안 쓰고 다음 함수로도 가능
+# def gcd(a, b):
+#     while b > 0:
+#         a, b = b, a % b
+#     return a
+
 import math
 
 
