@@ -1,33 +1,35 @@
+import math
+
 def solution(arrayA, arrayB):
-    num = 1
     answer = 0
+    gcd_a = 0
+    gcd_b = 0
 
-    while(1):
-        num += 1
-        a_cnt = 0
-        n_a_cnt = 0
-        b_cnt = 0
-        n_b_cnt = 0
+    for i in range(len(arrayA)):
+        gcd_a = math.gcd(gcd_a, arrayA[i])
 
-        # arrayA의 모든 원소가 나누어 떨어진다면
-        for num_A in arrayA:
-            if num_A % num == 0:
-                a_cnt += 1
-            else:
-                n_a_cnt += 1
-        
-        for num_B in arrayB:
-            if num_B % num != 0:
-                b_cnt += 1
-            else:
-                n_b_cnt += 1
-        
-        if a_cnt == len(arrayA) and b_cnt == len(arrayB):
-            answer = num
-        elif n_a_cnt == len(arrayA) and n_b_cnt == len(arrayB):
-            answer = num
+    for j in range(len(arrayB)):
+        gcd_b = math.gcd(gcd_b, arrayB[j])
 
+    # 다른 사람 거 나눠지면 안됨
+    # gcd 제일 작은 값 1이라 나눠지면 1
+    for k in range(len(arrayA)):
+        if arrayA[k] % gcd_b == 0:
+            gcd_b = 1
+        if arrayB[k] % gcd_a == 0:
+            gcd_a = 1
+
+    if gcd_a == 1 and gcd_b == 1:
+        return 0
+    else:
+        answer = max(gcd_a, gcd_b)
     return answer
+
+# 유클리드 호제법 -> 최대공약수 나온다.
+# def gcd(a, b):
+#     while b > 0:
+#         a, b = b, a % b
+#     return a
 
 arr1 = [14, 35, 119]
 arr2 = [18, 30, 102]
