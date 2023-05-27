@@ -14,4 +14,5 @@ def solution(s):
                 continue
             else:
                 ans.append(int(b))
+                
     return ans
