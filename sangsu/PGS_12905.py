@@ -1,23 +1,20 @@
 def solution(board):
-    answer = 1
+    answer = 0
     n = len(board)
     m = len(board[0])
+    
+    # board의 첫 번째 행과 첫 번째 열은 그대로 사용하므로 answer 값 업데이트
+    answer = max(board[0])  # 첫 번째 행에서 가장 큰 값
+    for i in range(n):
+        if board[i][0] == 1:
+            answer = 1
+            break
+    
+    # board의 각 칸을 순회하면서 가장 큰 정사각형의 한 변의 길이를 구함
     for i in range(1, n):
-        max_num = 0
-        for j in range(m):
+        for j in range(1, m):
             if board[i][j] == 1:
-                board[i][j] = board[i-1][j]+ 1
-        for k in range(m):
-            t = board[i][k]
-            if t != 0 and k+t<m+1:
-                for e in range(k, k+t):
-                    if board[i][e] < t:
-                        break
-                else:
-                    max_num = max(max_num, t)
-                    
-        answer = max(answer, max_num) 
-         
-    return answer*answer
-
-print(solution([[0,0,1,1],[1,1,1,1]]))
+                board[i][j] = min(board[i-1][j], board[i][j-1], board[i-1][j-1]) + 1
+                answer = max(answer, board[i][j])
+    
+    return answer**2
