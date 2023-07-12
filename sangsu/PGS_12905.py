@@ -18,3 +18,4 @@ def solution(board):
                 answer = max(answer, board[i][j])
     
     return answer**2
+
