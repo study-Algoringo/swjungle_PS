@@ -1,2 +1,6 @@
-dp = list([0]*4 for i in range(4))
-print(dp)
+import sys
+input = sys.stdin.readline
+word = 'tttyyyuuu'
+word = set(word)
+word = "".join(word)
+print(len(word))
