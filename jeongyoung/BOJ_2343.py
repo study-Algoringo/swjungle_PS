@@ -2,10 +2,6 @@
 n, m = map(int, input().split())
 num = list(map(int, input().split()))
 
-# start = 0
-# mid = max(num)
-# end = sum(num)
-
 total = sum(num)
 start = 0
 end = 1e9
