@@ -20,5 +20,6 @@ def find_card(card, arr):
             right = middle_idx - 1
     return 0
 
+
 for card in find_cards:
     print(find_card(card, cards))
