@@ -29,4 +29,8 @@ def dijkstra(graph, start):
     return distances
 
 distances = dijkstra(graph, start)
-print("\n".join(map(str, distances[1:])))
+for i in range(1, len(distances)):
+    if distances[i] == float('INF'):
+        print("INF")
+    else:
+        print(distances[i])
