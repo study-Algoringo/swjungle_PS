@@ -1,7 +1,7 @@
 import sys
 read = sys.stdin.readline
 
-# union에 포함되는지 확인하는 함수
+# union에 포함되는지 확인
 def find_union(x):
     if x != parents[x]:
         parents[x] = find_union(parents[x])
