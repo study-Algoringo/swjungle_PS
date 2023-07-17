@@ -7,7 +7,7 @@ graph = []; cost = 0
 
 for i in range(m):
     a, b, cost = map(int, read().split())
-    graph.append((a, b, cost))
+    graph.append((a, b, cost))  
 
 graph.sort(key=lambda x: x[-1])
 
