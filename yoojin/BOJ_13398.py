@@ -16,4 +16,5 @@ if n > 1:
         ans = max(ans, dp[i][0], dp[i][1])
 else:
     ans = nums[0]
+    
 print(ans)
