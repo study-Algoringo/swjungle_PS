@@ -9,7 +9,6 @@ for i in range(n):
     triangle[i] = list(map(int, read().split()))
 
 dp[0] = triangle[0]
-
 # 각 줄을 i, 번호를 j(0<=j<=i)라고 하면 dp[i][j] = dp[i-1][j-1], dp[i-1][j](j가 1~i-1)
 for i in range(1, n):
     for j in range(i + 1):
