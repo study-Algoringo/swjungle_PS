@@ -14,7 +14,7 @@ def solution(str_a, str_b, str_c):
                 if str_a[i-1] == str_b[j-1] == str_c[k-1]:
                     dp[i][j][k] = dp[i-1][j-1][k-1] + 1
                 else:
-                    dp[i][j][k] = max(dp[i-1][j][k], dp[i][j-1][k], dp[i][j][k-1], dp[i][j-1][k-1], dp[i-1][j][k-1], dp[i-1][j-1][k])
+                    dp[i][j][k] = max(dp[i-1][j][k], dp[i][j-1][k], dp[i][j][k-1])
     return dp[len(str_a)][len(str_b)][len(str_c)]
 
 answer = solution(arr[0], arr[1], arr[2])
