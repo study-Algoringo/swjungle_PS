@@ -23,4 +23,5 @@ for i in range(1, int(n/2) + 1):
         rest_combi = [x for x in team if x not in combi]
         answer = min(answer, abs(score(combi) - score(rest_combi)))
 print(answer)
+
 # Solution 2 - dfs
