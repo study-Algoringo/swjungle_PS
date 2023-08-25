@@ -1,24 +1,17 @@
 import sys
-import heapq
 read = sys.stdin.readline
 
 t = int(read())
-
-def solution(arr):
-    ret = 0
-    heapq.heapify(arr)
-
-    while len(arr) > 1:
-        # 최소 값 뽑고, 두 수의 합을 다시 push
-        a = heapq.heappop(arr)
-        b = heapq.heappop(arr)
-
-        ret += a + b
-        heapq.heappush(arr, a + b)
-    return ret
-
-for i in range(t):
+for _ in range(t):
     n = int(read())
-    arr = list(map(int, read().split()))
+    files = list(map(int, read().split()))
+    dp = [[0] * (n) for _ in range(n)]
 
-    print(solution(arr))
+    for length in range(2, n + 1):
+        for i in range(n - length + 1):
+            j = i + length - 1
+            dp[i][j] = float('inf')
+            for k in range(i, j):
+                dp[i][j] = min(dp[i][j], dp[i][k] + dp[k + 1][j] + sum(files[i:j + 1]))
+
+    print(dp[0][n - 1])
