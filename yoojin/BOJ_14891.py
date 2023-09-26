@@ -1,4 +1,5 @@
 import sys
+import collections
 read = sys.stdin.readline
 
 # 2번, -2번이 닿는 톱니
@@ -12,9 +13,9 @@ def turn(n, dir):
     elif dir == -1:
         gear[n].append(gear[n].pop(0))
         
-    if n > 0 and gear[n][6] != gear[n-1][2]:
+    if n > 0 and gear[n][-2] != gear[n-1][2]:
         turn(n - 1, -dir)
-    if n < 3 and gear[n][2] != gear[n+1][6]:
+    if n < 3 and gear[n][2] != gear[n+1][-2]:
         turn(n + 1, -dir)
 
 n = int(read())
